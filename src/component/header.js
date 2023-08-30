@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import '../styles/header.css';
 
 function Header({ setMovies }) {
   
@@ -24,8 +25,9 @@ function Header({ setMovies }) {
   };
   
   return (
-    <div>
-      <input type="text" 
+    <div className='header'>
+      <h1 className='title'>16mm.com</h1>
+      <input className='search-bar' type="text" placeholder='Search movies' 
              onKeyPress={(e) => { 
                if (e.key === 'Enter') searchMovies(e.target.value);
              }} 

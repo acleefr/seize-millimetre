@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/movies.css';
 
 function Movies({ movies }) {
     return (
-        <table>
-          <tbody>
+        <table className='table'>
+          <tbody className='cell-body'>
             {Array.isArray(movies) && movies.reduce((rows, movie, index) => {
               if (index % 3 === 0) rows.push([]);
               rows[rows.length - 1].push(movie);
@@ -11,11 +12,11 @@ function Movies({ movies }) {
             }, []).map((movieRow, rowIndex) => (
               <tr key={rowIndex}>
                 {movieRow.map(movie => (
-                  <td key={movie.id}>
+                  <td className='cell' key={movie.id}>
                     {movie.primaryImage && movie.primaryImage.url ? 
                       <img src={movie.primaryImage.url} alt={movie.originalTitleText.text} width="200" />
                       : 'Image non disponible'}
-                    <div>{movie.originalTitleText.text}</div>
+                    <div className='movie-title'>{movie.originalTitleText.text}</div>
                   </td>
                 ))}
               </tr>

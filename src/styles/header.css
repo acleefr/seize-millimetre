@@ -1,0 +1,30 @@
+.header {
+    background-color: rgb(255, 231, 47);
+    /* element are align vertically */
+    display: flex;
+    margin-bottom: 30px;
+    /*stick to the top */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.title {
+    color: black;
+    font-size: 2rem;
+    /* center it vertically */
+    align-self: center;
+    /*align it to the left */
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.search-bar {
+    width: 30%;
+    height: 20%;
+    /* center it vertically */
+    align-self: center;
+    /*align it to the right */
+    margin-left: auto;
+    margin-right: 20px;
+}
