@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/movies.css';
 
 function Movies({ movies }) {
@@ -13,18 +14,20 @@ function Movies({ movies }) {
               <tr key={rowIndex}>
                 {movieRow.map(movie => (
                   <td className='cell' key={movie.id}>
-                    {movie.primaryImage && movie.primaryImage.url ? 
-                      <img src={movie.primaryImage.url} alt={movie.originalTitleText.text} width="200" />
-                      : 'Image non disponible'}
-                    <div className='movie-title'>{movie.originalTitleText.text}</div>
+                    <Link to={`/movie/${movie.id}`}>
+                      {movie.primaryImage && movie.primaryImage.url ? 
+                        <img src={movie.primaryImage.url} alt={movie.originalTitleText.text} width="200" />
+                        : 'Image non disponible'}
+                      <div className='movie-title'>{movie.originalTitleText.text}</div>
+                    </Link>
                   </td>
                 ))}
               </tr>
             ))}
           </tbody>
         </table>
-      );      
-      
+      );  
 }
 
 export default Movies;
+
